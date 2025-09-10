@@ -9,7 +9,7 @@
         <h1 class="text-3xl font-bold mb-2">Selamat Datang, Admin!</h1>
         <p class="text-blue-100">Kelola platform Vourista dengan mudah dari dashboard ini.</p>
     </div>
-    
+
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
             <div class="flex items-center">
                 <div class="p-3 rounded-full bg-green-100 text-green-600">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-yellow-500">
             <div class="flex items-center">
                 <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Recent Activities -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Recent Jajans -->
@@ -59,12 +59,12 @@
                     Lihat Semua <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
-            
+
             <div class="space-y-4">
                 @forelse($recentJajans as $jajan)
                     <div class="flex items-center space-x-4 p-3 bg-gray-50 rounded-lg">
-                        <img 
-                            src="{{ $jajan->gambar_url ?? 'https://via.placeholder.com/48x48/f59e0b/ffffff?text=J' }}" 
+                        <img
+                            src="{{ $jajan->gambar_url ?? 'https://via.placeholder.com/48x48/f59e0b/ffffff?text=J' }}"
                             alt="{{ e($jajan->judul) }}"
                             class="w-12 h-12 object-cover rounded-lg"
                         >
@@ -83,7 +83,7 @@
                 @endforelse
             </div>
         </div>
-        
+
         <!-- Recent Ratings -->
         <div class="bg-white rounded-xl shadow-lg p-6">
             <div class="flex items-center justify-between mb-6">
@@ -92,7 +92,7 @@
                     Lihat Semua <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
-            
+
             <div class="space-y-4">
                 @forelse($recentRatings as $rating)
                     <div class="flex items-center space-x-4 p-3 bg-gray-50 rounded-lg">
@@ -113,7 +113,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Quick Actions -->
     <div class="bg-white rounded-xl shadow-lg p-6">
         <h2 class="text-xl font-bold text-gray-900 mb-6">Aksi Cepat</h2>

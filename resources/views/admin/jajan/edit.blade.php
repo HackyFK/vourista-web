@@ -63,22 +63,50 @@
                 </div>
                 
                 <!-- Long Description -->
+                 <!-- Long Description -->
                 <div>
                     <label for="deskripsi_lengkap" class="block text-sm font-semibold text-gray-700 mb-2">
-                        <i class="fas fa-file-alt mr-2 text-blue-500"></i>Deskripsi Lengkap
+                        <i class="fas fa-file-alt mr-2 text-green-500"></i>Deskripsi Lengkap
                     </label>
                     <textarea 
                         id="deskripsi_lengkap" 
                         name="deskripsi_lengkap" 
                         rows="6"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 @error('deskripsi_lengkap') border-red-500 @enderror"
-                        placeholder="Masukkan deskripsi lengkap jajanan"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 @error('deskripsi_lengkap') border-red-500 @enderror"
+                        placeholder="Masukkan deskripsi lengkap jajanan (akan ditampilkan di halaman detail)"
                         required
-                    >{{ old('deskripsi_lengkap', $jajan->deskripsi_lengkap) }}</textarea>
+                    >{{ old('deskripsi_lengkap') }}</textarea>
                     @error('deskripsi_lengkap')
                         <p class="text-red-500 text-sm mt-2"><i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}</p>
                     @enderror
                 </div>
+                
+                <!-- Price -->
+                <div>
+                    <label for="harga" class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-tag mr-2 text-green-500"></i>Harga
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">Rp</span>
+                        </div>
+                        <input 
+                            type="number" 
+                            id="harga" 
+                            name="harga" 
+                            value="{{ old('harga') }}"
+                            min="0"
+                            step="100"
+                            class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 @error('harga') border-red-500 @enderror"
+                            placeholder="0"
+                            required
+                        >
+                    </div>
+                    @error('harga')
+                        <p class="text-red-500 text-sm mt-2"><i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}</p>
+                    @enderror
+                </div>
+                
                 
                 <!-- Current Image -->
                 <div>

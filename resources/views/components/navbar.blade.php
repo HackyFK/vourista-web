@@ -23,16 +23,21 @@
               hover:text-white hover:bg-[#1e3a8a] rounded-lg">
         <i class="fas fa-info-circle mr-2"></i>Tentang
     </a>
-    <a href="{{ route('menu') }}" 
+    <a href="{{ route('jajan.index') }}" 
        class="relative text-gray-700 font-medium px-3 py-2 transition-all duration-300 ease-in-out 
               hover:text-white hover:bg-[#1e3a8a] rounded-lg">
         <i class="fas fa-solid fa-bars mr-2"></i>Menu
     </a>
 
-    <a href="{{ route('partner') }}" 
+    {{-- <a href="{{ route('partner') }}" 
        class="relative text-gray-700 font-medium px-3 py-2 transition-all duration-300 ease-in-out 
               hover:text-white hover:bg-[#1e3a8a] rounded-lg">
         <i class="fas fa-briefcase mr-2"></i>Partner
+    </a> --}}
+    <a href="{{ route('pesanan.index') }}" 
+       class="relative text-gray-700 font-medium px-3 py-2 transition-all duration-300 ease-in-out 
+              hover:text-white hover:bg-[#1e3a8a] rounded-lg">
+        <i class="fas fas fa-shopping-basket mr-2"></i>Pesan
     </a>
     <a href="{{ route('contact') }}" 
        class="relative text-gray-700 font-medium px-3 py-2 transition-all duration-300 ease-in-out 

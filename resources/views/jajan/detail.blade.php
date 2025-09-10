@@ -28,6 +28,10 @@
                             onerror="this.src='https://via.placeholder.com/600x400/1e3a8a/ffffff?text={{ urlencode($jajan->judul) }}'"
                         >
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                        <!-- Price Badge -->
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+                            {{ $jajan->formatted_harga }}
+                        </div>
                     </div>
                 </div>
                 
@@ -36,9 +40,28 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent animate-pulse-slow">
                         {{ $jajan->judul }}
                     </h1>
+                    
+                    <!-- Price Display -->
+                    <div class="flex items-center space-x-4 mb-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-xl shadow-lg">
+                            <div class="text-3xl font-bold">{{ $jajan->formatted_harga }}</div>
+                            <div class="text-sm opacity-90">per porsi</div>
+                        </div>
+                    </div>
+                    
                     <p class="text-xl mb-8 text-blue-100 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                         {{ $jajan->deskripsi_singkat }}
                     </p>
+                    
+                    <!-- Buy Button -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <a href="{{ route('pesanan.create', $jajan) }}" 
+                           class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group">
+                            <i class="fas fa-shopping-cart mr-3 text-xl group-hover:animate-bounce"></i>
+                            Beli Sekarang
+                            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
                     
                     <!-- Rating Display -->
                     <div class="glass-card p-6 transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="400">
@@ -162,7 +185,6 @@
                                         <span>
                                             <i class="fas fa-thumbs-up mr-1"></i>Ulasan terverifikasi
                                         </span>
-                                        <span>ID: #{{ str_pad($review->id, 4, '0', STR_PAD_LEFT) }}</span>
                                     </div>
                                 </div>
                             @endforeach
@@ -173,7 +195,27 @@
                 
                 <!-- Rating Form -->
                 <div class="xl:col-span-1">
-                    <div class="sticky top-24">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Quick Purchase Card -->
+                        <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-3xl shadow-2xl p-6 text-white" data-aos="fade-up" data-aos-delay="300">
+
+                            <h3 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fas fa-shopping-bag mr-2"></i>
+                                Pembelian Cepat
+                            </h3>
+                            <div class="bg-white/20 backdrop-blur rounded-xl p-4 mb-4">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold mb-1">{{ $jajan->formatted_harga }}</div>
+                                    <div class="text-sm opacity-90">per porsi</div>
+                                </div>
+                            </div>
+                            <a href="{{ route('pesanan.create', $jajan) }}" 
+                               class="block w-full bg-white text-orange-600 font-bold text-center py-3 px-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Pesan Sekarang
+                            </a>
+                        </div>
+
+                        <!-- Rating Form -->
                         <div class="bg-white rounded-3xl shadow-2xl p-8 border border-navy-100" data-aos="fade-up" data-aos-delay="400">
                             <h2 class="text-2xl font-bold text-navy-900 mb-6 flex items-center">
                                 <div class="w-3 h-6 bg-gradient-to-b from-navy-700 to-blue-700 rounded-full mr-3"></div>
@@ -242,40 +284,6 @@
             </div>
         </div>
     </section>
-
-<!-- Simplified Contact Section -->
-<section class="py-16 bg-gradient-to-br from-navy-800 to-blue-900 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="mb-8" data-aos="fade-up">
-
-            <p class="text-blue-500 text-lg">
-                Tertarik membeli? Ayo ke laman kontak sekarang!
-            </p>
-        </div>
-        
-        {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex items-center justify-center space-x-2 text-blue-200">
-                <i class="fas fa-phone text-green-400"></i>
-                <span>Telepon</span>
-            </div>
-            <div class="flex items-center justify-center space-x-2 text-blue-200">
-                <i class="fas fa-envelope text-blue-400"></i>
-                <span>Email</span>
-            </div>
-            <div class="flex items-center justify-center space-x-2 text-blue-200">
-                <i class="fab fa-whatsapp text-green-400"></i>
-                <span>WhatsApp</span>
-            </div>
-        </div>
-        
-        <div data-aos="fade-up" data-aos-delay="400">
-            {{-- <a href="{{ route('contact') }}" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg"> --}}
-                {{-- <i class="fas fa-paper-plane mr-2"></i>
-                Hubungi Kami
-            </a>
-        </div> --}} 
-    </div>
-</section>
 
 <style>
 /* Custom Navy Colors */
@@ -392,6 +400,45 @@
 .submit-btn:hover {
     box-shadow: 0 15px 35px rgba(15, 23, 42, 0.4);
 }
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .price-display {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .buy-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .quick-purchase {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.25rem;
+    }
+    
+    .rating-star {
+        aspect-ratio: 1;
+        font-size: 0.75rem;
+    }
+}
 </style>
 
 <script>
@@ -444,4 +491,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
 @endsection

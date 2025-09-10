@@ -61,6 +61,10 @@
                             <i class="fas fa-star"></i>
                             <span>Rating & Ulasan</span>
                         </a>
+                        <a href="{{ route('admin.pesanan.index') }}" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 {{ request()->routeIs('admin.ratings.*') ? 'bg-gray-800' : '' }}">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Laporan</span>
+                        </a>
                     </div>
                     
                     <div class="py-2">

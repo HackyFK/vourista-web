@@ -9,6 +9,16 @@ use Illuminate\Http\Request;
 
 class JajanController extends Controller
 {
+
+     public function index()
+    {
+        $jajans = Jajan::with('ratings')
+                      ->orderBy('created_at', 'desc')
+                      ->get();
+
+        return view('jajan.index', compact('jajans'));
+    }
+
     public function show(Jajan $jajan)
     {
         $jajan->load('ratings');
@@ -42,3 +52,4 @@ class JajanController extends Controller
         return redirect()->back()->with('success', 'Rating berhasil diberikan!');
     }
 }
+   

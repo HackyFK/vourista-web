@@ -14,10 +14,13 @@ return new class extends Migration
             $table->string('judul', 150);
             $table->string('deskripsi_singkat', 255);
             $table->text('deskripsi_lengkap');
+             $table->decimal('harga', 10, 2);
             $table->string('gambar', 255);
             $table->timestamps();
         });
     }
+
+    
 
     public function down(): void
     {

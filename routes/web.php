@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JajanController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,28 +19,52 @@ Route::get('/', function () {
 // Home pindah ke /home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
-Route::get('/jajan', [JajanController::class, 'index'])->name('jajan.index'); // 👉 daftar jajan
+// Jajan routes
+Route::get('/jajan', [JajanController::class, 'index'])->name('jajan.index');
 Route::get('/jajan/{jajan}', [JajanController::class, 'show'])->name('jajan.show');
 Route::post('/jajan/{jajan}/rate', [JajanController::class, 'rate'])->name('jajan.rate');
 
+// Static pages
 Route::get('/about', function () {
-    return view('about'); // pastikan ada
+    return view('about');
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact'); // pastikan ada
+    return view('contact');
 })->name('contact');
 
 Route::get('/partnership', function () {
-    return view('partnership'); // pastikan ada
+    return view('partnership');
 })->name('partner');
 
 Route::get('/menu', function () {
-    return view('menu'); // pastikan ada
+    return view('menu');
 })->name('menu');
 
+/*
+|--------------------------------------------------------------------------
+| Order System Routes (Public - No Login Required)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('pesanan')->group(function () {
+    Route::get('/', [PesananController::class, 'index'])->name('pesanan.index');
+    Route::get('/checkout', [PesananController::class, 'create'])->name('pesanan.create');
+    Route::post('/add-to-cart', [PesananController::class, 'addToCart'])->name('pesanan.add-to-cart');
+    Route::post('/update-cart', [PesananController::class, 'updateCart'])->name('pesanan.update-cart');
+    Route::post('/hitung-ongkir', [PesananController::class, 'hitungOngkir'])->name('pesanan.hitung-ongkir');
+    Route::post('/store', [PesananController::class, 'store'])->name('pesanan.store');
+    Route::get('/success/{pesanan}', [PesananController::class, 'success'])->name('pesanan.success');
+    
+    Route::get('/reset-cart', function() {
+    session()->forget('keranjang');
+    return 'Cart cleared';
+});
 
+    // 🔹 Tambahan untuk keranjang
+    Route::get('/cart-count', [PesananController::class, 'cartCount'])->name('pesanan.cart-count');
+    Route::delete('/clear-cart', [PesananController::class, 'clearCart'])->name('pesanan.clear-cart');
+    
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -80,4 +105,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/ratings', [AdminController::class, 'ratingsIndex'])->name('admin.ratings.index');
     Route::delete('/ratings/{id}', [AdminController::class, 'ratingDestroy'])->name('admin.ratings.destroy');
 
+    /*
+    |----------------------------------------------------------------------
+    | Orders Management
+    |----------------------------------------------------------------------
+    */
+    Route::get('/pesanan', [AdminController::class, 'pesananIndex'])->name('admin.pesanan.index');
+    Route::post('/pesanan/{pesanan}/update-status', [AdminController::class, 'updateStatus'])->name('admin.pesanan.update-status');
 });

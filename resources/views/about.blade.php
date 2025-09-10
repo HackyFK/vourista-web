@@ -6,6 +6,11 @@
 <div class="pt-16">
     <!-- Hero Section with Animated Background -->
     <section class="gradient-bg text-white py-20 relative overflow-hidden">
+        <!-- Company Name Background -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="company-name-bg">PT. VOURISTA SNACK KREASI</div>
+        </div>
+        
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="floating-shapes">
@@ -74,7 +79,7 @@
                 <div class="relative" data-aos="fade-left">
                     <div class="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                         <img 
-                            src="{{ asset('images/bersama.JPG') }}" 
+                            src="{{ asset('images/bersama.jpg') }}" 
                             alt="Vourista Company Background" 
                             class="w-full h-80 object-cover"
                         >
@@ -140,6 +145,64 @@
                     <p class="text-gray-700 text-center leading-relaxed">
                         Transparansi, kepercayaan, dan kualitas adalah fondasi utama dalam setiap layanan yang kami berikan kepada komunitas.
                     </p>
+                </div>
+            </div>
+
+            <!-- Logo Philosophy Section -->
+            <div class="mt-16">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-navy-800 mb-8 text-center" data-aos="fade-up">
+                        Filosofi Logo Vourista
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <!-- Logo Image -->
+                       <div class="flex justify-center" data-aos="fade-right">
+    <div class="relative">
+        <div class="w-64 h-64 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-105 transition-all duration-300">
+            <img 
+                src="{{ asset('images/logo.jpg') }}" 
+                alt="Logo Vourista" 
+                class="w-48 h-48 object-contain rounded-2xl"
+            >
+        </div>
+    </div>
+</div>
+
+
+                        <!-- Logo Meaning -->
+                        <div class="space-y-6" data-aos="fade-left">
+                            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                                <h4 class="font-bold text-navy-800 mb-3 flex items-center">
+                                    <i class="fas fa-palette text-blue-500 mr-2"></i>
+                                    Warna & Bentuk
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Kombinasi warna biru dan gradien melambangkan kepercayaan, profesionalitas, dan inovasi teknologi yang menjadi dasar platform Vourista.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                                <h4 class="font-bold text-navy-800 mb-3 flex items-center">
+                                    <i class="fas fa-star text-purple-500 mr-2"></i>
+                                    Elemen Visual
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Desain yang modern dan dinamis mencerminkan semangat untuk terus berinovasi dalam memberikan pengalaman terbaik bagi para pengguna.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+                                <h4 class="font-bold text-navy-800 mb-3 flex items-center">
+                                    <i class="fas fa-utensils text-green-500 mr-2"></i>
+                                    Makna Simbolis
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Logo mencerminkan perpaduan sempurna antara teknologi modern dan cinta terhadap kuliner tradisional Indonesia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -241,17 +304,6 @@
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-bold text-navy-800 mb-2">Farkhansyah Ibrahimovic</h3>
                         <p class="text-blue-600 font-medium mb-3">Chief Executive Officer</p>
-                        {{-- <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Visioner utama yang memimpin Vourista dengan pengalaman 10+ tahun di industri teknologi kuliner.
-                        </p> --}}
-                        {{-- <div class="flex justify-center space-x-3">
-                            <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
-                                <i class="fas fa-envelope text-sm"></i>
-                            </a>
-                        </div> --}}
                     </div>
                 </div>
 
@@ -274,17 +326,6 @@
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-bold text-navy-800 mb-2">Hacky Zalman Alivsta</h3>
                         <p class="text-purple-600 font-medium mb-3">Software Engineering</p>
-                        {{-- <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Arsitek teknologi handal yang membangun infrastruktur platform Vourista dengan standar enterprise.
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
-                            </a>
-                        </div> --}}
                     </div>
                 </div>
 
@@ -307,17 +348,6 @@
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-bold text-navy-800 mb-2">Muhammad Nur Syafii</h3>
                         <p class="text-pink-600 font-medium mb-3">Design Graphic</p>
-                        {{-- <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Strategis pemasaran kreatif yang membangun brand awareness Vourista di seluruh Indonesia.
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
-                                <i class="fab fa-instagram text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </a>
-                        </div> --}}
                     </div>
                 </div>
 
@@ -340,17 +370,6 @@
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-bold text-navy-800 mb-2">Maudy Ari Khofifah</h3>
                         <p class="text-green-600 font-medium mb-3">Design Graphic</p>
-                        {{-- <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Ahli keuangan berpengalaman yang mengelola aspek finansial dan investasi strategis perusahaan.
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
-                                <i class="fas fa-envelope text-sm"></i>
-                            </a>
-                        </div> --}}
                     </div>
                 </div>
 
@@ -373,51 +392,7 @@
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-bold text-navy-800 mb-2">Ismey Mukarromah</h3>
                         <p class="text-orange-600 font-medium mb-3">Marketing</p>
-                        {{-- <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Pemimpin operasional yang memastikan seluruh proses bisnis Vourista berjalan dengan efisien dan optimal.
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white hover:bg-orange-700 transition-colors">
-                                <i class="fab fa-twitter text-sm"></i>
-                            </a>
-                        </div> --}}
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-16 gradient-bg text-white relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div data-aos="fade-up">
-                {{-- <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Bergabunglah dengan Komunitas Vourista
-                </h2> --}}
-                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                    Mari bersama-sama membangun ekosistem kuliner yang lebih baik dan menemukan jajanan terbaik di seluruh Indonesia
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="{{ route('home') }}" class="btn-primary px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
-                        <i class="fas fa-search mr-2"></i>
-                        Jelajahi Jajanan
-                    </a>
-                    {{-- <a href="#" class="bg-white text-navy-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center">
-                        <i class="fas fa-users mr-2"></i>
-                        Gabung Komunitas
-                    </a> --}}
                 </div>
             </div>
         </div>
@@ -452,6 +427,28 @@ body {
     .text-navy-900 { color: var(--navy-900); }
     .border-navy-300 { border-color: var(--navy-300); }
     .bg-navy-600 { background-color: var(--navy-600); }
+
+    /* Company Name Background */
+    .company-name-bg {
+        font-size: 8rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.03);
+        letter-spacing: 0.1em;
+        transform: rotate(-15deg);
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+        animation: companyNameFloat 30s ease-in-out infinite;
+    }
+
+    @keyframes companyNameFloat {
+        0%, 100% {
+            transform: rotate(-15deg) translateY(0px);
+        }
+        50% {
+            transform: rotate(-15deg) translateY(-20px);
+        }
+    }
 
     /* Enhanced Navy Gradient Background with Animations */
     .gradient-bg {
@@ -901,7 +898,8 @@ body {
         .stats-bg-waves,
         .card-bg-animation,
         .grid-pattern,
-        .food-icons {
+        .food-icons,
+        .company-name-bg {
             animation: none;
         }
         
@@ -940,6 +938,10 @@ body {
         .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-5 {
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }
+
+        .company-name-bg {
+            font-size: 3rem;
+        }
     }
 
     @media (max-width: 640px) {
@@ -953,6 +955,10 @@ body {
         
         .grid-pattern {
             background-size: 30px 30px;
+        }
+
+        .company-name-bg {
+            font-size: 2rem;
         }
     }
 

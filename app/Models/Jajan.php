@@ -3,8 +3,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Jajan extends Model
 {
@@ -15,11 +15,21 @@ class Jajan extends Model
         'deskripsi_singkat',
         'deskripsi_lengkap',
         'gambar',
+        'harga',
+    ];
+
+    protected $casts = [
+        'harga' => 'decimal:2',
     ];
 
     public function ratings()
     {
         return $this->hasMany(Rating::class);
+    }
+
+    public function detailPesanans()
+    {
+        return $this->hasMany(DetailPesanan::class);
     }
 
     public function getAverageRatingAttribute()
@@ -35,5 +45,11 @@ class Jajan extends Model
     public function getGambarUrlAttribute()
     {
         return asset('storage/jajan/' . $this->gambar);
+    }
+
+    public function getFormattedHargaAttribute()
+    {
+        // cukup pakai \number_format() langsung
+        return 'Rp ' . number_format((float) $this->harga, 0, ',', '.');
     }
 }
